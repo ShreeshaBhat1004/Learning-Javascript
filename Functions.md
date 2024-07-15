@@ -1,3 +1,4 @@
+# Functions
 Functions are a fundamental concept in JavaScript and are essential for writing reusable and organized code. Let's dive into the details.
 
 ### What is a Function?
