@@ -95,20 +95,20 @@ console.log(localVariable); // Error: localVariable is not defined
 ### Closures
 
 A closure is a function that has access to its own scope, the scope of the outer function, and the global scope.
+``` Javascript
+function createCounter() {
+    let count = 0; // This variable is in the outer function's scope
 
-```javascript
-function outerFunction(outerVariable) {
-    return function innerFunction(innerVariable) {
-        console.log("Outer Variable: " + outerVariable);
-        console.log("Inner Variable: " + innerVariable);
+    return function() { // This is the inner function (closure)
+        count++; // The inner function has access to the outer function's variables
+        console.log(count);
     };
 }
 
-const newFunction = outerFunction("outside");
-newFunction("inside");
-// Output:
-// Outer Variable: outside
-// Inner Variable: inside
+const counter = createCounter(); // createCounter() returns the inner function
+counter(); // Output: 1
+counter(); // Output: 2
+counter(); // Output: 3
 ```
 
 ### Practical Example
