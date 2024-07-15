@@ -9,6 +9,7 @@ You can write JavaScript directly in your web browser's console or use a text ed
 1. Open your web browser (Chrome, Firefox, etc.).
 2. Right-click on the page and select "Inspect" or press `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Option+I` (Mac).
 3. Go to the "Console" tab.
+4. Write your code and press enter
 
 ### 2. **Basic Syntax and Data Types**
 
