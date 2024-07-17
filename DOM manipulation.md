@@ -153,29 +153,53 @@ Let's put it all together with a practical example. We'll create a simple to-do 
     <ul id="todoList"></ul>
 
     <script>
-        const addButton = document.getElementById('addButton');
-        const todoInput = document.getElementById('todoInput');
-        const todoList = document.getElementById('todoList');
+// Select the "Add" button element by its ID
+const addButton = document.getElementById('addButton');
 
-        addButton.addEventListener('click', function() {
-            const todoText = todoInput.value;
-            if (todoText === '') return;
+// Select the input field element by its ID
+const todoInput = document.getElementById('todoInput');
 
-            const listItem = document.createElement('li');
-            listItem.textContent = todoText;
-            listItem.className = 'todo-item';
+// Select the unordered list element by its ID
+const todoList = document.getElementById('todoList');
 
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
-            removeButton.addEventListener('click', function() {
-                todoList.removeChild(listItem);
-            });
+// Add an event listener to the "Add" button for the 'click' event
+addButton.addEventListener('click', function() {
+    // Get the value entered in the input field
+    const todoText = todoInput.value;
 
-            listItem.appendChild(removeButton);
-            todoList.appendChild(listItem);
+    // If the input field is empty, do nothing and return
+    if (todoText === '') return;
 
-            todoInput.value = '';
-        });
+    // Create a new list item (li) element
+    const listItem = document.createElement('li');
+
+    // Set the text content of the list item to the value entered in the input field
+    listItem.textContent = todoText;
+
+    // Add a class name to the list item for styling purposes
+    listItem.className = 'todo-item';
+
+    // Create a new button element for removing the list item
+    const removeButton = document.createElement('button');
+
+    // Set the text content of the remove button to 'Remove'
+    removeButton.textContent = 'Remove';
+
+    // Add an event listener to the remove button for the 'click' event
+    removeButton.addEventListener('click', function() {
+        // When the remove button is clicked, remove the list item from the unordered list
+        todoList.removeChild(listItem);
+    });
+
+    // Append the remove button to the list item
+    listItem.appendChild(removeButton);
+
+    // Append the list item to the unordered list
+    todoList.appendChild(listItem);
+
+    // Clear the input field by setting its value to an empty string
+    todoInput.value = '';
+});
     </script>
 </body>
 </html>
